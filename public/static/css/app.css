@@ -6,6 +6,9 @@
 body {
   font-family: "Roboto", sans-serif;
 }
+.treinta {
+  color: var(--segundary);
+}
 
 /* styles nav bar*/
 
@@ -63,8 +66,6 @@ body {
   display: flex;
   flex: 1;
   flex-direction: column;
-
-  /*  align-items: center;*/
   margin: 1rem 2rem;
 }
 .App-map {
@@ -78,4 +79,58 @@ body {
   height: 400px;
   border-radius: 10px;
   max-width: 100%;
+}
+.miInput {
+  background-color: rgb(214, 214, 214);
+  border: none;
+
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+}
+.miInput:focus {
+  outline: none;
+  box-shadow: 0.2rem 0.8rem 1.6rem rgba(0, 0, 0, 0.29);
+  transition: all 0.1s ease;
+  background-color: white;
+}
+.miLabel {
+  margin: 1rem 0;
+}
+.contMyInput {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+.containerLogin {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contBtnPrimary {
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+}
+.contBtnPrimary button {
+  background-color: var(--primary);
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 0.5rem;
+  color: rgb(65, 65, 65);
+  cursor: pointer;
+}
+.contBtnPrimary button :hover {
+  padding: 1rem 2.2rem;
+  transition: all 0.1s ease;
+}
+
+.btnUnderline {
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+}
+.btnUnderline span {
+  text-decoration: underline;
+  cursor: pointer;
 }
