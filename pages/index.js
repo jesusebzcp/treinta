@@ -1,9 +1,10 @@
-import Layout from "./layout";
+import React from "react";
+import Map from "../src/components/Map";
 
 export default function Home() {
   return (
     <div>
-      <h1>Hello next </h1>
+      <Map />
     </div>
   );
 }

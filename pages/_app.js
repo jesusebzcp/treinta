@@ -1,7 +1,9 @@
-import App from "next/app";
-import { Provider } from "react-redux";
-import store from "../src/flux/store";
 import React from "react";
+import { Provider } from "react-redux";
+import PropTypes from "prop-types";
+
+import store from "../src/flux/store";
+
 import Layout from "./layout";
 
 const MyApp = (props) => {
@@ -14,6 +16,11 @@ const MyApp = (props) => {
       </Layout>
     </Provider>
   );
+};
+
+MyApp.propTypes = {
+  Component: PropTypes.func,
+  pageProps: PropTypes.object,
 };
 
 export default MyApp;
