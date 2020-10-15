@@ -1,0 +1,69 @@
+:root {
+  --primary: #fed209;
+  --segundary: #1d7874;
+}
+/* styles Globals*/
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+/* styles nav bar*/
+
+.contNavBar {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: white;
+  align-items: center;
+  -webkit-box-shadow: -1px 12px 32px -20px rgba(0, 0, 0, 0.66);
+  -moz-box-shadow: -1px 12px 32px -20px rgba(0, 0, 0, 0.66);
+  box-shadow: -1px 12px 32px -20px rgba(0, 0, 0, 0.66);
+}
+.contLogo img {
+  width: 200px;
+  object-fit: contain;
+}
+.contLinks {
+  display: flex;
+}
+.contLinks a {
+  margin-right: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+.btnPrimary {
+  border: 1px solid var(--segundary);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  color: var(--segundary);
+  cursor: pointer;
+  font-weight: bold;
+}
+.btnSecundary {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background-color: var(--segundary);
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+}
+.btnSecundary:hover {
+  padding: 0.6rem 1.1rem;
+}
+.btnPrimary:hover {
+  padding: 0.6rem 1.1rem;
+  transition: all 0.1s ease;
+}
+.btnSecundary:hover {
+  padding: 0.6rem 1.1rem;
+  transition: all 0.1s ease;
+}
+
+/* Body*/
+.containerLayout {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  /*  align-items: center;*/
+  margin: 1rem 2rem;
+}
