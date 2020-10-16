@@ -241,19 +241,9 @@ a {
     margin-bottom: 1rem;
   }
   .btnPrimary {
-    border: 1px solid var(--segundary);
     padding: 2px;
-    border-radius: 5px;
-    color: var(--segundary);
-    cursor: pointer;
-    font-weight: bold;
   }
   .btnSecundary {
     padding: 2px;
-    border-radius: 5px;
-    background-color: var(--segundary);
-    font-weight: bold;
-    cursor: pointer;
-    color: white;
   }
 }
