@@ -1,15 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Lottie from "react-lottie";
+import { useDispatch, useSelector } from "react-redux";
+import { useRouter } from "next/router";
+
 import MyInput from "../../src/components/MyInput";
-import animation from "../../src/animation/login.json";
+import animation from "../../public/static/img/login.json";
 import ButtonPrimary from "../../src/components/ButtonPrimary";
 import ButtonUnderline from "../../src/components/ButtonUnderline";
 
+import { loginUser } from "../../src/flux/actions/auhtActions";
+import swal from "sweetalert";
+
 const Login = () => {
+  const dispatch = useDispatch();
+  const router = useRouter();
+
+  const user = useSelector((state) => state.auhtReducer.user);
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  console.log("email", email);
-  console.log("password", password);
 
   const defaultOptions = {
     loop: true,
@@ -19,6 +28,26 @@ const Login = () => {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
+  const loginDispatch = (cred) => dispatch(loginUser(cred));
+
+  const handleLogin = () => {
+    if (email === "" || password === "") {
+      swal({
+        title: "Lo siento",
+        text: "todos los campos son necesarios",
+        icon: "warning",
+      });
+    } else {
+      loginDispatch({ email, password });
+    }
+  };
+
+  useEffect(() => {
+    if (user) {
+      router.push("/");
+    }
+  }, [user]);
+
   return (
     <div className="containerLogin">
       <Lottie options={defaultOptions} height={200} width={200} />
@@ -45,11 +74,11 @@ const Login = () => {
           setValue={setPassword}
         />
 
-        <ButtonPrimary text={"Iniciar sesión"} />
+        <ButtonPrimary text={"Iniciar sesión"} action={handleLogin} />
 
         <ButtonUnderline
-          title={"No tengo cuenta"}
-          text={" Quiero registrarme"}
+          title={"Al iniciar sesión"}
+          text={"Acepto términos y condiciones"}
         />
       </div>
     </div>

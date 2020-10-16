@@ -9,7 +9,28 @@ body {
 .treinta {
   color: var(--segundary);
 }
+.titlePrimary {
+  font-size: 48px;
+  text-align: center;
+  font-weight: bold;
+}
+.titleSecundary {
+  font-size: 28px;
 
+  text-align: center;
+  font-weight: bold;
+  margin-top: 4rem;
+}
+.pGloblal {
+  line-height: 2;
+  width: 600px;
+  color: #646464;
+}
+.contP {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 /* styles nav bar*/
 
 .contNavBar {
@@ -66,7 +87,7 @@ body {
   display: flex;
   flex: 1;
   flex-direction: column;
-  margin: 1rem 2rem;
+  padding-bottom: 5%;
 }
 .App-map {
   height: 100%;
@@ -89,7 +110,9 @@ body {
 }
 .miInput:focus {
   outline: none;
-  box-shadow: 0.2rem 0.8rem 1.6rem rgba(0, 0, 0, 0.29);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
   transition: all 0.1s ease;
   background-color: white;
 }
@@ -133,4 +156,56 @@ body {
 .btnUnderline span {
   text-decoration: underline;
   cursor: pointer;
+}
+.contHeader {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2rem;
+  align-items: center;
+
+  border-radius: 10px;
+  background-color: var(--primary);
+}
+.headerImg img {
+  height: 500px;
+  object-fit: contain;
+}
+
+.cardRegistre {
+  align-items: center;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.contHome {
+  padding: 0 2rem;
+}
+.contAddLocal {
+  display: flex;
+  margin: 2rem;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+.cardSearch {
+  flex: 1;
+  margin: 2rem;
+}
+.lottieMap {
+  flex: 2;
+}
+.contLoading {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+.contLoading img {
+  width: 300px;
+  object-fit: contain;
 }

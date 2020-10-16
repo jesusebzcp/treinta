@@ -1,6 +1,8 @@
 import { combineReducers } from "redux";
-import registroReducer from "./registroReducer";
+import addressReducerJs from "./addressReducer.js";
+import auhtReducer from "./auhtReducer";
 
 export default combineReducers({
-  registroReducer: registroReducer,
+  auhtReducer: auhtReducer,
+  addressReducer: addressReducerJs,
 });

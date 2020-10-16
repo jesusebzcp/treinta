@@ -3,7 +3,7 @@ import "firebase/auth";
 import "firebase/firestore";
 import "firebase/storage";
 
-const firebaseConfig = {
+const config = {
   apiKey: process.env.APIKEY,
   authDomain: process.env.AUTHDOMAIN,
   databaseURL: process.env.DATABASEURL,
@@ -15,7 +15,7 @@ const firebaseConfig = {
 };
 
 let app = !firebase.apps.length
-  ? firebase.initializeApp(firebaseConfig)
+  ? firebase.initializeApp(config)
   : firebase.app();
 
 //export from  sdk facebook

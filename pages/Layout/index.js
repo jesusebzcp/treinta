@@ -1,9 +1,43 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import PropTypes from "prop-types";
 import NavBar from "../../src/shared/NavBar";
+import { useDispatch, useSelector } from "react-redux";
+import { observerUser } from "../../src/flux/actions/auhtActions";
+import { auth } from "../../src/config/firebase";
+import { getAddress } from "../../src/flux/actions/addressAction";
+import Loading from "../../src/components/Loading";
 
 const Layout = (props) => {
+  const dispatch = useDispatch();
+  const activeObserver = (uid) => dispatch(observerUser(uid));
+  const activeGetAddress = () => dispatch(getAddress());
+  const loadingAddress = useSelector((state) => state.addressReducer.loading);
+  const loadingAuth = useSelector((state) => state.auhtReducer.loading);
+
+  const [loading, setloading] = useState(true);
+
+  function onAuthStateChanged(user) {
+    if (user) {
+      console.log("user =====>", user);
+      activeObserver(user.uid);
+    }
+  }
+
+  useEffect(() => {
+    const subscriber = auth.onAuthStateChanged(onAuthStateChanged);
+    return subscriber; // unsubscribe on unmount
+  }, []);
+
+  useEffect(() => {
+    activeGetAddress();
+  }, []);
+  useEffect(() => {
+    setTimeout(() => {
+      setloading(false);
+    }, 2000);
+  }, []);
+
   return (
     <>
       <Head>
@@ -24,7 +58,7 @@ const Layout = (props) => {
 
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta property="og:layout" content="layout" key="layout" />
-        <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+
         <link
           href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css"
           rel="stylesheet"
@@ -34,10 +68,16 @@ const Layout = (props) => {
           href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         />
       </Head>
-      <NavBar />
-      <div className="containerLayout">
-        <main>{props.children}</main>
-      </div>
+      {loadingAddress || loadingAuth || loading ? (
+        <Loading />
+      ) : (
+        <>
+          <NavBar />
+          <div className="containerLayout">
+            <main>{props.children}</main>
+          </div>
+        </>
+      )}
     </>
   );
 };
