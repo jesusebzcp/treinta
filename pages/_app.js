@@ -3,7 +3,7 @@ import { Provider } from "react-redux";
 import PropTypes from "prop-types";
 
 import store from "../src/flux/store";
-import Layout from "./layout";
+import Layout from "./Layout";
 
 const MyApp = (props) => {
   const { Component, pageProps } = props;

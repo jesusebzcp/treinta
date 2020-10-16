@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import PropTypes from "prop-types";
-import NavBar from "../../src/shared/NavBar";
+import NavBar from "../src/shared/NavBar";
 import { useDispatch, useSelector } from "react-redux";
-import { observerUser } from "../../src/flux/actions/auhtActions";
-import { auth } from "../../src/config/firebase";
-import { getAddress } from "../../src/flux/actions/addressAction";
-import Loading from "../../src/components/Loading";
+import { observerUser } from "../src/flux/actions/auhtActions";
+import { auth } from "../src/config/firebase";
+import { getAddress } from "../src/flux/actions/addressAction";
+import Loading from "../src/components/Loading";
 
 const Layout = (props) => {
   const dispatch = useDispatch();
