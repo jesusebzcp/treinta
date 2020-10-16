@@ -19,14 +19,13 @@ const Layout = (props) => {
 
   function onAuthStateChanged(user) {
     if (user) {
-      console.log("user =====>", user);
       activeObserver(user.uid);
     }
   }
 
   useEffect(() => {
     const subscriber = auth.onAuthStateChanged(onAuthStateChanged);
-    return subscriber; // unsubscribe on unmount
+    return subscriber;
   }, []);
 
   useEffect(() => {
@@ -44,6 +43,11 @@ const Layout = (props) => {
         <html lang="es" />
         <title>Treinta</title>
         <link rel="stylesheet" href="/static/css/app.css" />
+        <link
+          rel="icon"
+          type="image/png"
+          href="https://www.google.com/s2/favicons?domain=https://www.treinta.co/"
+        />
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
@@ -66,6 +70,15 @@ const Layout = (props) => {
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
+        <meta
+          name="description"
+          content="Gestiona las transacciones de tu negocio, conoce la utilidad de tu negocio en cualquier momento y registra y cobra deudas 3 veces más eficazmente.
+Ayuda a tu negocio a crecer más con Treinta, la aplicación financiera gratuita. ¡Treinta es gratis, seguro y fácil de usar!"
+        />
+        <meta
+          name="keywords"
+          content="treinta finanzas, aumentar ingresos, manejar ingresos"
         />
       </Head>
       {loadingAddress || loadingAuth || loading ? (

@@ -28,24 +28,6 @@ const Map = ({ pins }) => {
     };
   }, []);
 
-  useEffect(() => {
-    // remove all 'maps.googleapis.com' scripts injected into the document
-    // hat tip: https://stackoverflow.com/a/9469983/5045662
-    // to do: i am uncertain whether this actually removes the scripts from memory,
-    // but if they create everything on `window.google.maps` i think we'll be ok
-    const tags = document.getElementsByTagName("script");
-    for (let i = tags.length; i >= 0; i--) {
-      //search backwards within nodelist for matching elements to remove
-      if (
-        tags[i] &&
-        tags[i].getAttribute("src") != null &&
-        tags[i].getAttribute("src").includes("maps.googleapis.com")
-      )
-        tags[i].parentNode.removeChild(tags[i]); //remove element by calling parentNode.removeChild()
-    }
-    // set the google.maps instance on the window to null
-    window.google = null;
-  }, []);
   return (
     <div>
       <div className="App">

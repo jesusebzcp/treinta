@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const ButtonUnderline = ({ text, title }) => {
   return (
@@ -8,6 +9,10 @@ const ButtonUnderline = ({ text, title }) => {
       </p>
     </div>
   );
+};
+ButtonUnderline.propTypes = {
+  text: PropTypes.string,
+  title: PropTypes.string,
 };
 
 export default ButtonUnderline;

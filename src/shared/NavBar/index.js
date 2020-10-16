@@ -55,7 +55,16 @@ const NavBar = () => {
             </a>
           )}
           {!user ? (
-            <a className="btnSecundary">Descargarla Gratis</a>
+            <a
+              href={
+                "https://play.google.com/store/apps/details?id=com.treintaapp"
+              }
+              className="btnSecundary"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Descargarla Gratis
+            </a>
           ) : (
             <a
               className="btnSecundary"

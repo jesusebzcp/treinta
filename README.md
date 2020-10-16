@@ -1,3 +1,16 @@
+## add .env
+
+add api keys from firebase and google api key
+next.config
+
+## start application
+
+use yarn install o npm install
+
+next
+
+yarn dev o npm run dev
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

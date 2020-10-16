@@ -9,6 +9,9 @@ body {
 .treinta {
   color: var(--segundary);
 }
+a {
+  text-decoration: none;
+}
 .titlePrimary {
   font-size: 48px;
   text-align: center;
@@ -208,4 +211,33 @@ body {
 .contLoading img {
   width: 300px;
   object-fit: contain;
+}
+/* Mobile firts*/
+@media screen and (max-width: 768px) {
+  .contHeader {
+    flex-direction: column;
+    padding-top: 2rem;
+  }
+  .contNavBar {
+    flex-direction: column;
+    padding-bottom: 1rem;
+  }
+  .titlePrimary {
+    font-size: 28px;
+    text-align: center;
+    font-weight: bold;
+  }
+  .pGloblal {
+    line-height: 2;
+    width: 400px;
+    color: #646464;
+  }
+  .contLogo img {
+    margin-bottom: 1rem;
+  }
+  .headerImg img {
+    height: 250px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+  }
 }

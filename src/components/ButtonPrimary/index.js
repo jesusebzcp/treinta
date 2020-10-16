@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const ButtonPrimary = ({ text, action }) => {
   return (
@@ -9,5 +10,8 @@ const ButtonPrimary = ({ text, action }) => {
     </div>
   );
 };
-
+ButtonPrimary.propTypes = {
+  text: PropTypes.string,
+  action: PropTypes.func,
+};
 export default ButtonPrimary;
