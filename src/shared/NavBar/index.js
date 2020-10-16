@@ -63,7 +63,7 @@ const NavBar = () => {
               rel="noopener noreferrer"
               target="_blank"
             >
-              Descargarla Gratis
+              Descargarla
             </a>
           ) : (
             <a
